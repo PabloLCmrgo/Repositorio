@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';  // Importar Router para poder navegar  
+//import { Router } from '@angular/router';  // Importar Router para poder navegar  
 
 
 @Component({
-// tslint:disable-next-line: component-selector
   selector: 'tour-navbar',
   templateUrl: './navbar.component.html',
   styles: []
 })
-export class NavbarComponent implements OnInit {
+export class TourNavbarComponent implements OnInit {
 
-  constructor(private _router: Router) { }
-
+  constructor() { }
+  // private _router: Router
   ngOnInit() {
   }
 
-  buscarHeroe( termino: string ){
+  // buscarHeroe( termino: string ){
     // console.log(termino);
-    this._router.navigate( ['/buscar',termino] );
-  }
+   // this._router.navigate( ['/buscar', termino] );
+  //}
 
 }

@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
-
-import { HomeComponent } from './TourDeheroes/components/home/home.component';
-
 
 
 
@@ -12,10 +9,9 @@ const routes: Routes = [
   { path: 'Profile',
     component: ProfileComponent
     },
-    {
-      path: 'TourDeHeroes',
-      component: HomeComponent
-   },
+   {
+    path: 'TourDeHeroes',
+    loadChildren: './TourDeheroes/TourDeheroes.module#TourDeheroesModule'},
     {
       path: '**',
       pathMatch: 'full',

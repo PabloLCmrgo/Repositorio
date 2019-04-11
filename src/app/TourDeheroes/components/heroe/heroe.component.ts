@@ -14,10 +14,11 @@ export class HeroeComponent{
 
   constructor( private _activatedRoute: ActivatedRoute,
               private _heroesService: HeroesService
-    ) { 
+    ) {
 
-    this._activatedRoute.params.subscribe( params =>{                 //la prop. params regresa una una promesa, es algo que está pendiente de esos cambios.
-    this.heroe = this._heroesService.getHeroe( params['id'] );
+    this._activatedRoute.params.subscribe( params =>{
+    // la prop. params regresa una promesa, es algo que está pendiente de esos cambios.
+    this.heroe = this._heroesService.getHeroe( params['idx'] );
     });
   }
 

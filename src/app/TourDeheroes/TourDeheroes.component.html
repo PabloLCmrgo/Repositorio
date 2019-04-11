@@ -1,4 +1,22 @@
-<!--
+<!-- Nav tabs 
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu1">About</a>
+    </li>
+</ul>-->
+
+<!-- Tab panes 
+<div class="tab-content">
+    <div class="tab-pane container active" id="home">
+        <app-home></app-home>
+    </div>
+    <div class="tab-pane container fade" id="menu1">
+        <app-about></app-about>
+    </div>
+</div> -->
 <nav class="navbar navbar-expand-lg navbar-inverse bg-faded bg-dark">
     <a class="navbar-brand" href="#">
         <img src="assets/img/A-64.png" width="30" height="30" alt="">
@@ -11,13 +29,13 @@
         <ul class="navbar-nav mr-auto">[
 
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/TourHome']">Home</a>
+                <a class="nav-link" [routerLink]="['TourHome']">Home</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/TourHeroes']">Heroes</a>
+                <a class="nav-link" [routerLink]="['TourHeroes']">Heroes</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" [routerLink]="['/TourDeheroes','TourAbout']" ng-click="$event.stopPropagation();">About</a>
+                <a class="nav-link" [routerLink]="['TourAbout']">About</a>
             </li>
 
         </ul>
@@ -28,4 +46,4 @@
         </form>
     </div>
 </nav>
--->
+<router-outlet></router-outlet>

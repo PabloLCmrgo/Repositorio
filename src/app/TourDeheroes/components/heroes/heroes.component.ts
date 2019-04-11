@@ -23,7 +23,7 @@ export class HeroesComponent implements OnInit {
   }
 
   verHeroe(idx: number){       // idx es i de índice
-  this._router.navigate( ['/heroe', idx] );   // router es para jalar en servicio en el cual se navega y dirige
+  this._router.navigate( ['heroe', idx] );   // router es para jalar en servicio en el cual se navega y dirige
   }                                          // hacia el componente designado.
 
 }

@@ -5,9 +5,9 @@
 
     <div class="col-md-4">
 
-        <img [src]="heroe.img" class="img-fluid" [alt]="heroe.nombre">
+        <img [src]="heroe.tourimg" class="img-fluid" [alt]="heroe.nombre">
         <br><br>
-        <a [routerLink]="['/heores']" class="btn btn-outline-danger btn-block">Regresar</a>
+        <a [routerLink]="['TourHeroes']" class="btn btn-outline-danger btn-block">Regresar</a>
     </div>
 
     <div class="col-md-8 ">
@@ -17,8 +17,8 @@
             {{ heroe.bio }}
         </p>
         <div>
-            <img *ngIf="heroe.casa !='Marvel'" class="img-logo" src="assets/img/DC.png " alt="DC ">
-            <img *ngIf="heroe.casa =='Marvel'" class="img-logo" src="assets/img/marvel.jpg " alt="Marvel ">
+            <img *ngIf="heroe.casa !='Marvel'" class="img-logo" src="../../../../assets//tourimg//DC.png" alt="DC ">
+            <img *ngIf="heroe.casa =='Marvel'" class="img-logo" src="../../../../assets/tourimg/marvel.jpg " alt="Marvel ">
         </div>
     </div>
 
