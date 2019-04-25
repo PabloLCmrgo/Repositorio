@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { RouterModule } from '@angular/router';
 
 // Rutas
@@ -38,7 +37,8 @@ import { TourDeheroesComponent } from './TourDeheroes.component';
   ],
   imports: [
     TourRoutingModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [
     HeroesService

@@ -1,0 +1,69 @@
+<span class="badge badge-light">{{1 | findname: brandlist: 'brand_id': 'brand_name' }} </span>
+
+
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="product_name">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.product_name}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="list_price">
+            <th mat-header-cell *matHeaderCellDef> Precios </th>
+            <td mat-cell *matCellDef="let element"> {{element.list_price}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="model_year">
+            <th mat-header-cell *matHeaderCellDef> Modelo </th>
+            <td mat-cell *matCellDef="let element"> {{element.model_year}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="brand_id">
+            <th mat-header-cell *matHeaderCellDef> Marca </th>
+            <td mat-cell *matCellDef="let element">
+                <!-- {{element.brand_id | findname: brandlist: 'brand_id': 'brand_name' }}-->
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="category_id">
+            <th mat-header-cell *matHeaderCellDef> Categoría </th>
+            <td mat-cell *matCellDef="let element"> {{element.category_id | findname: categorylist: 'category_id': 'category_name' }} </td>
+        </ng-container>
+
+        <!-- Symbol Column {{element.symbol}}-->
+        <ng-container matColumnDef="product_id">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let element">
+                <!-- Example single danger button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Acciones
+        </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" (click)="Editar(element.product_id)"><i class="fas fa-pen"></i>Editar</a>
+                        <a class="dropdown-item" (click)="Consultar(element.product_id)"><i class="fas fa-search"></i>Consultar</a>
+                        <a class="dropdown-item" (click)="Eliminar(element.product_id)"><i class="fa fa-trash"></i>Eliminar</a>
+                    </div>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+<!--
+<table>
+    <tr *ngFor="let item of source">
+        <td> {{ item.product_id }}</td>
+        <td> {{ item.product_name }}</td>
+        <td> {{ item.list_price }}</td>
+        <td> {{ item.model_year }}</td>
+    </tr>
+</table> -->

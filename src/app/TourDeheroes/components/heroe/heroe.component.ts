@@ -18,7 +18,7 @@ export class HeroeComponent{
 
     this._activatedRoute.params.subscribe( params =>{
     // la prop. params regresa una promesa, es algo que está pendiente de esos cambios.
-    this.heroe = this._heroesService.getHeroe( params['idx'] );
+    this.heroe = this._heroesService.getHeroe( params['id'] );
     });
   }
 

@@ -7,15 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-   MENU_ITEMS: any[] = [
-    {
-      title: 'wizard',
-      icon: '#',
-      link: '/pages/wizard',
-      home: true,
-    },
-  ];
-
   constructor() { }
 
   ngOnInit() {

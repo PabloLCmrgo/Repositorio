@@ -6,17 +6,7 @@ import { Router } from '@angular/router';
     templateUrl: './TourDeheroes.component.html'
 })
 export class TourDeheroesComponent implements OnInit {
-/*
-  activeTab = 'search';
 
-  search(activeTab){
-    this.activeTab = activeTab;
-  }
-
-  result(activeTab){
-    this.activeTab = activeTab;
-  }
-  */
  constructor(private _router: Router) { }
 
  ngOnInit() {

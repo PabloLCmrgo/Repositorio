@@ -1,0 +1,115 @@
+#first {
+    width: 90%;
+    background-color: #E6EBFF;
+    padding: 25px;
+    .row {
+        margin-bottom: 20px;
+        .col-md-12 {
+            h1 {
+                color: #232C43;
+                letter-spacing: 3px;
+            }
+            h5 {
+                color: #232C43;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    .row {
+        margin-bottom: 20px;
+        .col-md-3 {
+            margin-bottom: -280px;
+            border-right: 5px #232C43 dotted;
+            height: fit-content;
+            h3 {
+                color: #232C43;
+            }
+            ul {
+                list-style: none;
+                padding-left: 0px;
+                li {
+                    font-size: x-large;
+                    img {
+                        width: 8%;
+                        margin-right: 5%;
+                    }
+                    a {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .col-md-9 {
+            display: flex;
+            margin-bottom: -280px;
+            img {
+                height: 30%;
+                border-radius: 80px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            p {
+                padding-left: 2%;
+                font-weight: 400;
+                font-family: cursive;
+            }
+        }
+    }
+    .row {
+        .col {
+            p {
+                margin-left: 43%;
+                margin-top: 10%;
+            }
+        }
+    }
+}
+
+#second {
+    background-color: #232C43;
+    padding: 25px;
+    width: 90%;
+    display: flex;
+    .col-md-6 {
+        h3 {
+            color: #E6EDFF;
+            margin-top: 40px;
+        }
+        ul {
+            list-style: none;
+            li {
+                color: #E6EDFF;
+                h5 {
+                    color: #E6EDFF;
+                    margin-top: 15px;
+                }
+                p {
+                    color: #E6EDFF;
+                }
+                a {
+                    color: #A8B398;
+                }
+            }
+        }
+    }
+    .col-md-6 {
+        .container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            img {
+                width: 10%;
+                margin: 20px;
+            }
+        }
+        p {
+            color: #E6EDFF;
+        }
+        ul {
+            li {
+                color: #E6EBFF;
+                span {
+                    color: #E6EBFF;
+                }
+            }
+        }
+    }
+}
