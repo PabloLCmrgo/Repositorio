@@ -69,7 +69,7 @@ Showdata() {
         });
       }  
 Editar(id: number){
-  this.router.navigate(['Editor', id], { relativeTo: this.actroute } );
+  this.router.navigate(['../Editor', id], { relativeTo: this.actroute } );
 }
 Consultar(id: number){
 }
