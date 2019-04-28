@@ -10,12 +10,12 @@ import { SpotifyService } from './services/spotify.service';
 })
 export class SpotiappComponent implements OnInit {
     constructor( spotiapp: SpotifyService ) {
-        spotiapp.ValidateUser()      
+        spotiapp.ValidateUser()
         .subscribe( (result) => {
             console.log('ValidateUser response');
         });
         setInterval(() => {
-            spotiapp.ValidateUser()      
+            spotiapp.ValidateUser()
             .subscribe( (result) => {
                 console.log('ValidateUser response');
             });
