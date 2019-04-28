@@ -17,7 +17,7 @@ export class ArtistaComponent {
   constructor(private router: ActivatedRoute,
               private spotify: SpotifyService   ) {
 
-                alert('Artista');
+              
     this.loadingArtist = true;
 
     this.router.params.subscribe( params => {

@@ -1,3 +1,44 @@
-<p>
-  control-panel-crudabc works!
-</p>
+<button class="btn btn-primary" style="float: right" [routerLink]="['../../Panel']">
+    Regresar
+  </button>
+<form>
+
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Nombre</label>
+        <div class="col-6">
+            <input readonly type="text" class="form-control" placeholder="Nombre" name="nombre" [(ngModel)]="product.product_name" #nombre="ngModel">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Precio</label>
+        <div class="col-6">
+            <input readonly type="money" class="form-control" placeholder="Precio" name="Precio" [(ngModel)]="product.list_price" #nombre="ngModel">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Modelo</label>
+        <div class="col-6">
+            <input readonly type="number" class="form-control" placeholder="modelo" name="modelo" [(ngModel)]="product.model_year" #nombre="ngModel">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Marca</label>
+        <div class="col-6">
+            <span readonly class="form-control">
+                {{product.brand_id | findname: brandlist: 'brand_id': 'brand_name' }}
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Categoría</label>
+        <div class="col-6">
+            <span readonly class="form-control">
+                {{product.category_id | findname: categorylist: 'category_id': 'category_name' }}
+            </span>
+        </div>
+    </div>
+
+</form>

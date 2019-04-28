@@ -1,30 +1,55 @@
-<form>
+<button class="btn btn-danger" style="float: right" [routerLink]="['../../Panel']">
+  Regresar
+</button>
+<br><br>
+<form (ngSubmit)="guardar(forma)" #forma="ngForm">
+
     <div class="form-group">
-        <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <label for="exampleFormControlInput1">Nombre</label>
+        <input type="text" class="form-control" placeholder="Nombre" name="nombre" [(ngModel)]="product.product_name" #nombre="ngModel">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlSelect1">Example select</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+        <label for="exampleFormControlInput1">Precio</label>
+        <input type="money" class="form-control" placeholder="Precio" name="Precio" [(ngModel)]="product.list_price" #nombre="ngModel">
     </div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect2">Example multiple select</label>
-        <select multiple class="form-control" id="exampleFormControlSelect2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Modelo</label>
+        <div class="col-md-8">
+            <select class="form-control" [(ngModel)]="product.model_year" name="modelo" #smodelo="ngModel">
+      <option> Seleccione un modelo</option>
+      <option *ngFor="let modelo of modelos" [value]="modelo.codigo">{{modelo.nombre}}</option>
+    </select>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Marca</label>
+        <div class="col-md-8">
+            <select class="form-control" [(ngModel)]="product.brand_id" name="marca" #smarca="ngModel">
+    <option> Seleccione una marca</option>
+    <option *ngFor="let marca of brandlist" [value]="marca.brand_id">{{marca.brand_name}}</option>
+  </select>
+        </div>
     </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Categoría</label>
+        <div class="col-md-8">
+            <select class="form-control" [(ngModel)]="product.category_id" name="categoria" #scategoria="ngModel">
+  <option> Seleccione un categoría</option>
+  <option *ngFor="let categoria of categorylist" [value]="categoria.category_id">{{categoria.category_name}}</option>
+</select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-8">
+            <!-- -->
+            <button type="submit" class="btn btn-outline-primary">
+      Guardar
+    </button>
+        </div>
+    </div>
+
 </form>

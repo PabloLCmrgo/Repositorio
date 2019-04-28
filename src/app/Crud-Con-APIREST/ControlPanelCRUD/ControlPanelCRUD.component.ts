@@ -57,10 +57,10 @@ Showdata() {
         console.log(this.brandlist);
       });
     }
-    
+
     ShowCategory() {
       this.loading = true;
-    
+
         this.crudservice.getCategory()
         .subscribe( (result) => {
           this.categorylist = result
@@ -72,27 +72,45 @@ Editar(id: number){
   this.router.navigate(['../Editor', id], { relativeTo: this.actroute } );
 }
 Consultar(id: number){
+  this.router.navigate(['../Consulta', id], { relativeTo: this.actroute } );
 }
 
-Eliminar(id: number){  
-  alert(id);
+Eliminar(id: number){
+  
   Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
+    title: '¿Estás seguro',
+    text: "¡No podrás recuperar tu archivo!",
     type: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
+    confirmButtonText: '¡Si, eliminalo!'
   }).then((result) => {
     if (result.value) {
-      Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
-        'success'
-      )
+      this.crudservice.deleteproduct(id)
+      .subscribe( (result) => {
+      if(result['Result'] == "OK"){
+        Swal.fire(
+          '¡Borrado!',
+          'Su archivo, fue eliminado.',
+          'success'
+        )
+        setTimeout(() => {
+       // this.router.navigate(['./Panel'], { relativeTo: this.actroute } );
+       this.Showdata();
+        }, 2000);
+      } else{
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: result['Message']
+        });
+      } 
+      }); 
     }
   });
 }
-
+Nuevo(){
+  this.router.navigate(['../Editor', "new"], { relativeTo: this.actroute } );
+}
 }

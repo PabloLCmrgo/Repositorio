@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormsModule, FormGroup } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',

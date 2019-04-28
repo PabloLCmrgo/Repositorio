@@ -45,4 +45,30 @@ getCategory(){
               }));
 }
 
+getProductbyid(product_id: number){
+
+  return this.getQuery(`api/product/${product_id}`)
+  .pipe( map( data => {
+    let r = data['Record'];
+    return r;
+    }));
+}
+
+saveproduct(product: any){
+  const url = `http://winco2017-001-site1.dtempurl.com/mod/api/saveproduct`;
+
+    return this.http.post(url, product)
+    .pipe( map( data => {
+    return data;
+    }));
+}
+
+deleteproduct(product_id: number){
+  const url = `http://winco2017-001-site1.dtempurl.com/mod/api/product/delete?id=${product_id}`;
+
+    return this.http.post(url, product_id)
+    .pipe( map( data => {
+    return data;
+    }));
+}
 }

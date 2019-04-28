@@ -8,26 +8,25 @@ import { map, catchError } from 'rxjs/operators';
 export class SpotifyService {
   apiURL: string = 'https://accounts.spotify.com';
   auth: any;
-
+  headers:any;
   constructor(private http:HttpClient) { 
     console.log('Spotify service Listo');
-   //this.storeToken("BQAQj0s6L5gRoCCrm9S2wotZJ85lY1oHA9ImMx6woJQ50KOjlLMWvNdBxmQ1HXLdEL24JaFY__5uDvXKSe8");
-  }
+}
+
   
   getQuery(query: string){
       const url = `https://api.spotify.com/v1/${query}`;
-  
       const headers = new HttpHeaders({
         'Authorization': 'Bearer ' + this.getTokenByLS()
       });
-
+      console.log(this.headers);
       return this.http.get(url, { headers });
     }
 
     getToken() {
-      const url = `https://zipco.mx/mod/api/token`;
+      const url = `http://winco2017-001-site1.dtempurl.com/mod/api/token`;
   
-      return this.http.get(url, { });
+      return this.http.get(url,{});
     }
 
 
@@ -68,12 +67,19 @@ export class SpotifyService {
 
 
 ValidateUser() {
-  return this.getToken() 
-  .pipe( map( (data:any) => {
-   console.log(data);
-   this.storeToken(data.access_token); 
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json;charset=utf-8'
+  });
+  const url = 'http://winco2017-001-site1.dtempurl.com/mod/api/token';
+  
+return this.http.get(url,{ headers })
+.pipe( map( data => {
+    console.log(data);
+    this.storeToken(data['access_token']);
+    data
+    //return data;
+   //this.storeToken(data.access_token); // storeToken almacen local
   })); 
-
 }
 
 // store token in local storage

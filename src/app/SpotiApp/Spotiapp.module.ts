@@ -14,7 +14,7 @@ import { SpotifyService } from './services/spotify.service';
 
 // Pipes
 import { DomseguroPipe } from './components/pipes/domseguro.pipe';
-import { NoimagePipe } from './components/pipes/noimage.pipe';
+import { NoimagePipe } from './pipes/noimage.pipes';
 
 // Componenetes
 import { ArtistaComponent } from './components/artista/artista.component';

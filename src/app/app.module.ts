@@ -8,8 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 // Componentes
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { ErrorComponent } from './components/error/error.component';
 import { PipesComponent } from './Pipes/pipes.component';
 
@@ -32,8 +30,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     ProfileComponent,
-    NavbarComponent,
-    SidebarComponent,
     ErrorComponent,
       PipesComponent,
       CapitalizadoPipe,

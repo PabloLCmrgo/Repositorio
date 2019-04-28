@@ -13,7 +13,7 @@ const SpotiRoutes: Routes = [{
     children: [
         {
         path: 'Home',
-        component: HomeComponent
+        component: HomeComponent,
         },
         {
           path: 'Search',

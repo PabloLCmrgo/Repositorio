@@ -1,17 +1,77 @@
-<div class="container-fluid">
+<!--<div class="container-fluid">
     <div class="row">
         <div id="navbar" class="col-md-12">
             <app-navbar></app-navbar>
         </div>
-        <!-- /#Navbar -->
+         /#Navbar 
         <div id="sidebar" class="col-3">
             <app-sidebar></app-sidebar>
         </div>
-        <!-- /#Sidebar -->
+         /#Sidebar 
 
         <div class="col-9">
             <router-outlet></router-outlet>
         </div>
 
+    </div>
+</div>  -->
+
+<div class="container-fluid">
+    <div class="mail-box">
+        <aside class="sm-side">
+            <div class="user-head">
+                <a class="inbox-avatar" href="javascript:;">
+                    <img width="64" hieght="60" src="assets/cvimg/gears.jpg">
+                </a>
+                <div class="user-name" style="margin-top: 20px">
+                    <h5><a href="#">Pablo E López Camargo</a></h5>
+                    <span><a href="#">pablo_lopezc93@hotmail.com</a></span>
+                </div>
+            </div>
+            <div class="inbox-body">
+                <p data-toggle="modal" title="Ejercicios" class="btn btn-compose">
+                    Ejercicios
+                </p>
+
+            </div>
+            <ul class="inbox-nav inbox-divider">
+                <li routerLinkActive="active" class="active">
+                    <a [routerLink]="['Profile']"><i class="fa fa-home"></i>Home </a>
+                </li>
+                <li routerLinkActive="active" class="active">
+                    <a [routerLink]="['TourDeHeroes']"><i class="fas fa-mask"></i>Tour de Heroes </a>
+                </li>
+                <li routerLinkActive="active" class="active">
+                    <a [routerLink]="['SpotiApp']"><i class="fab fa-spotify"></i>SpotiApp </a>
+                </li>
+                <li routerLinkActive="active" class="active">
+                    <a [routerLink]="['AuthApp']"><i class="fas fa-sign-in-alt"></i>AuthApp </a>
+                </li>
+                <li routerLinkActive="active" class="active">
+                    <a [routerLink]="['Pipes']"><i class="fab fa-pied-piper-pp"></i>Pipes </a>
+                </li>
+                <li routerLinkActive="active" class="active">
+                    <a [routerLink]="['GoogleMaps']"><i class="fas fa-map-marked-alt"></i>Google Maps </a>
+                </li>
+                <li routerLinkActive="active" class="active">
+                    <a [routerLink]="['Graficos']"><i class="fas fa-chart-line"></i>Gráficos </a>
+                </li>
+                <li routerLinkActive="active" class="active">
+                    <a [routerLink]="['CRUDconAPIREST']"><i class="fas fa-arrows-alt-v"></i>CRUD con API REST </a>
+                </li>
+            </ul>
+
+
+
+        </aside>
+        <aside class="lg-side">
+            <div class="inbox-head">
+                <h1>Mi portafolio</h1>
+
+            </div>
+            <div class="inbox-body">
+                <router-outlet></router-outlet>
+            </div>
+        </aside>
     </div>
 </div>

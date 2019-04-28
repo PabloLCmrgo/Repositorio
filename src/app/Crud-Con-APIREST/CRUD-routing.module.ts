@@ -15,7 +15,7 @@ const CRUDRoutes: Routes = [{
     component: ControlPanelCRUDComponentComponent
     },
     {
-      path: 'Consulta',
+      path: 'Consulta/:product_id',
       component: ControlPanelCRUDConsultaComponent
     },
     {

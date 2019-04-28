@@ -7,8 +7,8 @@ import { Router, RouterLinkActive } from '@angular/router';
 })
 export class PipesComponent {
 
-  nombre = "Fernando";
-  nombre2 = "fernAndo alberto heRRera jimenez";
+  nombre = "Pablo";
+  nombre2 = "PabLO eVeRArDO LOpEz CaMArgO";
 
   arreglo = [1,2,3,4,5,6,7,8,9,10];
 

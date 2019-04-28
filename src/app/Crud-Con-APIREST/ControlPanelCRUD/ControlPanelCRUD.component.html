@@ -1,3 +1,6 @@
+<button class="btn btn-danger" style="float: right" [routerLink]="['../../Panel']" (click)="Nuevo()">
+    Nuevo
+  </button>
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
 
@@ -22,7 +25,7 @@
         <ng-container matColumnDef="brand_id">
             <th mat-header-cell *matHeaderCellDef> Marca </th>
             <td mat-cell *matCellDef="let element">
-                <!-- {{element.brand_id | findname: brandlist: 'brand_id': 'brand_name' }}-->
+                {{element.brand_id | findname: brandlist: 'brand_id': 'brand_name' }}
             </td>
         </ng-container>
 
