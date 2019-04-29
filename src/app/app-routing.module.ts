@@ -6,10 +6,10 @@ import { PipesComponent } from './Pipes/pipes.component';
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
 
 
-const routes: Routes = [
-  { path: 'Profile',
-    component: ProfileComponent
-    },
+const routes: Routes = [{
+    path: 'Profile',
+    component: ProfileComponent,
+    children: [
     { path: 'not-found',
     component: ErrorComponent
     },
@@ -42,11 +42,15 @@ const routes: Routes = [
     loadChildren: './Crud-Con-APIREST/CRUDconAPIREST.module#CRUDConAPIRESTModule'
   },
     {
-      path: '**',
+      path: '',
       pathMatch: 'full',
-      redirectTo: 'not-found'
-    }
-];
+      redirectTo: 'Profile'
+    },
+    {
+      path: '**',
+      component: ErrorComponent,
+    }],
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
